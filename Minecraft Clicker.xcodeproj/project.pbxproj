@@ -11,6 +11,8 @@
 		40A00C2229350AAB00D26B88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A00C2129350AAB00D26B88 /* ContentView.swift */; };
 		40A00C2429350AAC00D26B88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40A00C2329350AAC00D26B88 /* Assets.xcassets */; };
 		40A00C2729350AAC00D26B88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40A00C2629350AAC00D26B88 /* Preview Assets.xcassets */; };
+		40A00C2E2935802800D26B88 /* ClickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A00C2D2935802800D26B88 /* ClickerView.swift */; };
+		40A00C30293581F900D26B88 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A00C2F293581F900D26B88 /* TutorialView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		40A00C2129350AAB00D26B88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		40A00C2329350AAC00D26B88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40A00C2629350AAC00D26B88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		40A00C2D2935802800D26B88 /* ClickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerView.swift; sourceTree = "<group>"; };
+		40A00C2F293581F900D26B88 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				40A00C1F29350AAB00D26B88 /* Minecraft_ClickerApp.swift */,
 				40A00C2129350AAB00D26B88 /* ContentView.swift */,
+				40A00C2F293581F900D26B88 /* TutorialView.swift */,
+				40A00C2D2935802800D26B88 /* ClickerView.swift */,
 				40A00C2329350AAC00D26B88 /* Assets.xcassets */,
 				40A00C2529350AAC00D26B88 /* Preview Content */,
 			);
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40A00C30293581F900D26B88 /* TutorialView.swift in Sources */,
 				40A00C2229350AAB00D26B88 /* ContentView.swift in Sources */,
 				40A00C2029350AAB00D26B88 /* Minecraft_ClickerApp.swift in Sources */,
+				40A00C2E2935802800D26B88 /* ClickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
