@@ -19,9 +19,12 @@ struct ClickerView: View {
             Text("\(score)")
                 .font(Font.custom("Impact", size: 20))
             Spacer()
-            Image("clickerBlock")
+            Image("block \(randomValue)")
+                .resizable()
+                .frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .onTapGesture {
-                    score += 1
+                    chooseRandom(times: 1)
+                        score += 1
                 }
             Spacer()
             
@@ -32,7 +35,16 @@ struct ClickerView: View {
             }
         )
     }
+    func chooseRandom(times:Int) {
+        if times > 0 {
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                randomValue = Int.random(in: 1...5)
+                chooseRandom(times: times - 1)
+            }
+        }
+    }
 }
+
 
 struct ClickerView_Previews: PreviewProvider {
     static var previews: some View {
