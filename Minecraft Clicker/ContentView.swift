@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ContentView: View {
+    @State private var player: AVAudioPlayer!
     var body: some View {
         NavigationView {
             VStack {
@@ -24,6 +26,9 @@ struct ContentView: View {
                     Label("PLAY", systemImage: "")
                         .font(Font.custom("impact", size: 25))
                         .foregroundColor(.green)
+                        .onSubmit {
+                            playSounds(sound: "MinecraftCLick")
+                        }
                     
                 }
                 .padding(50)
@@ -39,6 +44,18 @@ struct ContentView: View {
                     Image("minecraft")
                 }
             )
+        }
+    }
+    func playSounds(sound: String) {
+        if let asset = NSDataAsset(name: sound){
+            do {
+                // Use NSDataAsset's data property to access the audio file stored in Sound.
+                player = try AVAudioPlayer(data:asset.data, fileTypeHint:"wav")
+                // Play the above sound file.
+                player?.play()
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
         }
     }
 }
