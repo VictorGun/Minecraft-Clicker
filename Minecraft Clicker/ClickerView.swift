@@ -30,13 +30,13 @@ struct ClickerView: View {
                     playSounds(sound: "minecraftBreak")
                     chooseRandom(times: 1)
                     score += 1
-                    if score == 10 {
+                    if score == 100 {
                         levelUp = "CONGRADULATIONS! YOU MADE IT TO LEVEL 1!"
                         playSounds(sound: "minecraftLevel")
                     } else {
                         levelUp = ""
                     }
-                    if score == 20 {
+                    if score == 200 {
                         levelUp = "CONGRADULATIONS! YOU MADE IT TO LEVEL 2!"
                         playSounds(sound: "minecraftLevel")
                     }
@@ -68,7 +68,7 @@ struct ClickerView: View {
                         levelUp = "CONGRADULATIONS! YOU MADE IT TO LEVEL 9!"
                         playSounds(sound: "minecraftLevel")
                     }
-                    if score == 10 {
+                    if score == 1000 {
                         levelUp = "CONGRADULATIONS! YOU MADE IT TO LEVEL MAX!"
                         showingAlert = true
                         playSounds(sound: "minecraftWin")
