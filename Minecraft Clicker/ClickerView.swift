@@ -25,48 +25,17 @@ struct ClickerView: View {
             Spacer()
             Image("block \(randomValue)")
                 .resizable()
-                .frame(width: 200, height: 200, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 200, height: 200, alignment: .center)
                 .onTapGesture {
                     playSounds(sound: "minecraftBreak")
                     chooseRandom(times: 1)
                     score += 1
-                    if score == 100 {
-                        levelUp = "CONGRADULATIONS! YOU MADE IT TO LEVEL 1!"
+                    
+                    if score % 100 == 0 {
+                        levelUp = "CONGRADULATIONS! YOU LEVELED UP!"
                         playSounds(sound: "minecraftLevel")
                     } else {
                         levelUp = ""
-                    }
-                    if score == 200 {
-                        levelUp = "CONGRADULATIONS! YOU MADE IT TO LEVEL 2!"
-                        playSounds(sound: "minecraftLevel")
-                    }
-                    if score == 300 {
-                        levelUp = "CONGRADULATIONS! YOU MADE IT TO LEVEL 3!"
-                        playSounds(sound: "minecraftLevel")
-                    }
-                    if score == 400 {
-                        levelUp = "CONGRADULATIONS! YOU MADE IT TO LEVEL 4!"
-                        playSounds(sound: "minecraftLevel")
-                    }
-                    if score == 500 {
-                        levelUp = "CONGRADULATIONS! YOU MADE IT TO LEVEL 5!"
-                        playSounds(sound: "minecraftLevel")
-                    }
-                    if score == 600 {
-                        levelUp = "CONGRADULATIONS! YOU MADE IT TO LEVEL 6!"
-                        playSounds(sound: "minecraftLevel")
-                    }
-                    if score == 700 {
-                        levelUp = "CONGRADULATIONS! YOU MADE IT TO LEVEL 7!"
-                        playSounds(sound: "minecraftLevel")
-                    }
-                    if score == 800 {
-                        levelUp = "CONGRADULATIONS! YOU MADE IT TO LEVEL 8!"
-                        playSounds(sound: "minecraftLevel")
-                    }
-                    if score == 900 {
-                        levelUp = "CONGRADULATIONS! YOU MADE IT TO LEVEL 9!"
-                        playSounds(sound: "minecraftLevel")
                     }
                     if score == 1000 {
                         levelUp = "CONGRADULATIONS! YOU MADE IT TO LEVEL MAX!"
@@ -75,16 +44,16 @@ struct ClickerView: View {
                     }
                 }
                 .alert("Important message", isPresented: $showingAlert) {
-                            Button("OK", role: .cancel) { }
-                        }
+                    Button("OK", role: .cancel) { }
+                }
             Spacer()
             Text("\(levelUp)") .foregroundColor(.green)
                 .font(Font.custom("Impact", size: 20))
                 .fontWeight(.bold)
         }
         .alert("CONGRADULATIONS YOU GOT TO MAX LEVEL! PRESS OK TO CONTINUE OR PRESS BACK TO GO TO MAIN MENU", isPresented: $showingAlert) {
-                    Button("OK", role: .cancel) { }
-                }
+            Button("OK", role: .cancel) { }
+        }
         
         .background(
             ZStack {

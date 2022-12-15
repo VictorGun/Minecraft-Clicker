@@ -21,9 +21,7 @@ struct TutorialView: View {
 
 • EVERY TIME YOU DESTROY A BLOCK YOU GET POINTS
 
-• IF YOU GET TO ___ POINTS YOU WIN
-
-• BUY PICKAXES IN THE SHOP SECTION. BETTER THE PICKAXE... HIGHER POINTS YOU GET PER BLOCK
+• IF YOU GET TO 1000 POINTS YOU WIN
 
 """) .font(Font.custom("impact", size: 25))
                     .foregroundColor(.green)
