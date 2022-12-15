@@ -6,19 +6,19 @@
 //
 
 import SwiftUI
-import AVFoundation
 
 struct ContentView: View {
-    @State private var player: AVAudioPlayer!
     var body: some View {
         NavigationView {
+            // Navigation View used for switching through views. (where the Navigation Links are)
             VStack {
                 Spacer()
                     .frame(height: 500)
-                Text("MINECRAFT CLICKER").foregroundColor(.green)
-                    .font(Font.custom("Impact", size: 40))
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
+                // Multiple Spacers with frame heights to adjust where the text is
+                Text("MINECRAFT CLICKER").foregroundColor(.green) // green text
+                    .font(Font.custom("Impact", size: 40)) // impact font use
+                    .fontWeight(.bold) // bold text
+                    .multilineTextAlignment(.center) // center alignment for text
                 Spacer()
                     .frame(height: 400)
                 
@@ -26,11 +26,8 @@ struct ContentView: View {
                     Label("PLAY", systemImage: "")
                         .font(Font.custom("impact", size: 25))
                         .foregroundColor(.green)
-                        .onSubmit {
-                            playSounds(sound: "MinecraftCLick")
-                        }
-                    
                 }
+                // These 2 navigations links bring you to a view. First brings you to clicker view. Second brings you to Tutorial view.
                 .padding(50)
                 NavigationLink(destination: TutorialView()) {
                     Label("TUTORIAL", systemImage: "")
@@ -42,20 +39,9 @@ struct ContentView: View {
             } .background(
                 ZStack {
                     Image("minecraft")
+                        // usage of background image in the back
                 }
             )
-        }
-    }
-    func playSounds(sound: String) {
-        if let asset = NSDataAsset(name: sound){
-            do {
-                // Use NSDataAsset's data property to access the audio file stored in Sound.
-                player = try AVAudioPlayer(data:asset.data, fileTypeHint:"wav")
-                // Play the above sound file.
-                player?.play()
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
         }
     }
 }
